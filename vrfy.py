@@ -1,5 +1,9 @@
 #!/usr/bin/python
 
+###
+#  a simple script that iterates a file containing user names to check if the user exists on a SMTP server (using "VRFY")
+####
+
 import socket
 import sys
 
@@ -23,6 +27,6 @@ for i in users:
                 result=s.recv(1024)
                 print(result)
         else:
-                s.send("QUIT")
+                s.send("QUIT") # closes the connection to the SMTP server
 s.close()
 
